@@ -1,0 +1,1947 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COAT | Premium Epoxy Flooring & Concrete Solutions | Bryan-College Station, TX</title>
+    <meta name="description" content="Transform your space with premium epoxy floors, polished concrete, and industrial coatings. Family-owned. Principle-driven. Serving the Texas Triangle.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --coat-blue: #0047ab;
+            --coat-blue-light: rgba(0, 71, 171, 0.08);
+            --coat-blue-hover: #003d94;
+            --coat-blue-glow: rgba(0, 71, 171, 0.4);
+            --gold: #c9a227;
+            --black: #0a0a0a;
+            --gray-900: #1a1a1a;
+            --gray-700: #374151;
+            --gray-600: #525252;
+            --gray-400: #a3a3a3;
+            --gray-200: #e5e5e5;
+            --gray-100: #f5f5f5;
+            --gray-50: #fafafa;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'DM Sans', -apple-system, sans-serif;
+            color: var(--black);
+            background: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Page Loader */
+        .page-loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: var(--white);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .page-loader.loaded {
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loader-logo {
+            width: 80px;
+            height: 80px;
+            animation: pulse 1s ease infinite;
+        }
+
+        .loader-logo svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--coat-blue);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.1); opacity: 0.7; }
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: 'Instrument Serif', Georgia, serif;
+            font-weight: 400;
+            line-height: 1.1;
+        }
+
+        /* Scroll Animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1.25rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+
+        nav.scrolled {
+            padding: 0.75rem 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
+            letter-spacing: -0.02em;
+            color: var(--coat-blue);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        .logo svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--coat-blue);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--coat-blue);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-cta {
+            background: var(--coat-blue);
+            color: var(--white);
+            padding: 0.75rem 1.5rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 71, 171, 0.2);
+        }
+
+        .nav-cta:hover {
+            background: var(--coat-blue-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(0, 71, 171, 0.35);
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: var(--black);
+            transition: all 0.3s ease;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, var(--white) 0%, var(--gray-50) 100%);
+        }
+
+        /* Animated gradient background */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 1000px;
+            background: radial-gradient(ellipse at center, var(--coat-blue-light) 0%, transparent 60%);
+            pointer-events: none;
+            animation: heroGlow 8s ease-in-out infinite;
+        }
+
+        @keyframes heroGlow {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 0.5; }
+            50% { transform: translateX(-50%) scale(1.2); opacity: 0.8; }
+        }
+
+        .hero-droplet {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: min(700px, 90vw);
+            height: auto;
+            opacity: 0.03;
+            pointer-events: none;
+            z-index: 0;
+            animation: dropletFloat 6s ease-in-out infinite;
+        }
+
+        @keyframes dropletFloat {
+            0%, 100% { transform: translate(-50%, -50%) scale(1); }
+            50% { transform: translate(-50%, -52%) scale(1.02); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+            opacity: 0;
+            animation: slideUp 0.8s ease 0.2s forwards;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+            color: var(--gold);
+        }
+
+        .hero-tagline {
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--coat-blue);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            opacity: 0;
+            animation: slideUp 0.8s ease 0.3s forwards;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            margin-bottom: 1.5rem;
+            color: var(--black);
+            opacity: 0;
+            animation: slideUp 0.8s ease 0.4s forwards;
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--coat-blue);
+            position: relative;
+        }
+
+        .hero h1 em::after {
+            content: '';
+            position: absolute;
+            bottom: 0.1em;
+            left: 0;
+            right: 0;
+            height: 0.15em;
+            background: var(--coat-blue);
+            opacity: 0.2;
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            opacity: 0;
+            animation: slideUp 0.8s ease 0.5s forwards;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: slideUp 0.8s ease 0.6s forwards;
+        }
+
+        .btn-primary {
+            background: var(--coat-blue);
+            color: var(--white);
+            padding: 1.1rem 2.25rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            box-shadow: 0 4px 20px rgba(0, 71, 171, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: var(--coat-blue-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 35px rgba(0, 71, 171, 0.4);
+        }
+
+        .btn-primary svg {
+            transition: transform 0.3s ease;
+        }
+
+        .btn-primary:hover svg {
+            transform: translateX(4px);
+        }
+
+        .btn-secondary {
+            background: var(--white);
+            color: var(--black);
+            padding: 1.1rem 2.25rem;
+            border-radius: 100px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            border: 1.5px solid var(--gray-200);
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--coat-blue);
+            color: var(--coat-blue);
+            box-shadow: 0 4px 20px rgba(0, 71, 171, 0.15);
+        }
+
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+            opacity: 0;
+            animation: fadeIn 1s ease 1.2s forwards;
+        }
+
+        .scroll-indicator span {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--gray-400);
+        }
+
+        .scroll-indicator .mouse {
+            width: 24px;
+            height: 38px;
+            border: 2px solid var(--gray-300);
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .scroll-indicator .mouse::before {
+            content: '';
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 8px;
+            background: var(--coat-blue);
+            border-radius: 2px;
+            animation: scrollMouse 1.5s ease infinite;
+        }
+
+        @keyframes scrollMouse {
+            0%, 100% { opacity: 1; top: 8px; }
+            50% { opacity: 0.3; top: 16px; }
+        }
+
+        /* Trust Badges */
+        .trust-bar {
+            padding: 3rem 2rem;
+            background: var(--white);
+            border-bottom: 1px solid var(--gray-100);
+        }
+
+        .trust-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .trust-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .trust-item svg {
+            width: 24px;
+            height: 24px;
+            color: var(--coat-blue);
+        }
+
+        .trust-item.gold svg {
+            color: var(--gold);
+        }
+
+        /* Before/After Section */
+        .transformation {
+            padding: 8rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .transformation-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .transformation-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .transformation-content h2 {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            margin-bottom: 1.5rem;
+        }
+
+        .transformation-content p {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .stat-number {
+            font-family: 'Instrument Serif', serif;
+            font-size: 2.5rem;
+            color: var(--coat-blue);
+            line-height: 1;
+            margin-bottom: 0.25rem;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Before/After Slider */
+        .ba-slider {
+            position: relative;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            aspect-ratio: 4/3;
+            cursor: ew-resize;
+        }
+
+        .ba-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ba-image.after {
+            clip-path: inset(0 50% 0 0);
+        }
+
+        .ba-slider-line {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 4px;
+            background: var(--white);
+            transform: translateX(-50%);
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .ba-slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background: var(--white);
+            border-radius: 50%;
+            z-index: 11;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            cursor: ew-resize;
+        }
+
+        .ba-slider-handle svg {
+            color: var(--coat-blue);
+        }
+
+        .ba-label {
+            position: absolute;
+            bottom: 1rem;
+            padding: 0.5rem 1rem;
+            background: rgba(0, 0, 0, 0.7);
+            color: var(--white);
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            border-radius: 100px;
+            z-index: 5;
+        }
+
+        .ba-label.before {
+            left: 1rem;
+        }
+
+        .ba-label.after {
+            right: 1rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 8rem 2rem;
+            background: var(--white);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            color: var(--coat-blue);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--gray-600);
+            font-size: 1.1rem;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: var(--gray-50);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+            border-color: var(--coat-blue);
+            background: var(--white);
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--coat-blue) 0%, #0066ff 100%);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 20px;
+            background: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 71, 171, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            background: var(--coat-blue);
+            transform: scale(1.1);
+        }
+
+        .service-icon svg {
+            width: 32px;
+            height: 32px;
+            color: var(--coat-blue);
+            transition: color 0.3s ease;
+        }
+
+        .service-card:hover .service-icon svg {
+            color: var(--white);
+        }
+
+        .service-card h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--black);
+        }
+
+        .service-card h3 span {
+            color: var(--coat-blue);
+        }
+
+        .service-card > p {
+            color: var(--gray-600);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .service-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .service-features span {
+            background: var(--white);
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            color: var(--gray-600);
+            border: 1px solid var(--gray-200);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-features span {
+            background: var(--coat-blue-light);
+            border-color: transparent;
+            color: var(--coat-blue);
+        }
+
+        /* Process Section */
+        .process {
+            padding: 8rem 2rem;
+            background: var(--gray-50);
+        }
+
+        .process-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .process-steps {
+            display: grid;
+            gap: 0;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            left: 39px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gray-200);
+        }
+
+        .process-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 2rem;
+            padding: 2rem 0;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Instrument Serif', serif;
+            font-size: 1.75rem;
+            color: var(--coat-blue);
+            border: 2px solid var(--gray-200);
+            position: relative;
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover .step-number {
+            background: var(--coat-blue);
+            color: var(--white);
+            border-color: var(--coat-blue);
+            transform: scale(1.1);
+        }
+
+        .step-content {
+            padding-top: 1.25rem;
+        }
+
+        .step-content h3 {
+            font-family: 'DM Sans', sans-serif;
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .step-content p {
+            color: var(--gray-600);
+            line-height: 1.7;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 8rem 2rem;
+            background: var(--black);
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        .testimonials .section-header h2 {
+            color: var(--white);
+        }
+
+        .testimonials .section-header p {
+            color: var(--gray-400);
+        }
+
+        .testimonial-slider {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .testimonial-track {
+            display: flex;
+            gap: 2rem;
+            transition: transform 0.5s ease;
+        }
+
+        .testimonial-card {
+            flex: 0 0 calc(50% - 1rem);
+            background: var(--gray-900);
+            border-radius: 24px;
+            padding: 2.5rem;
+            position: relative;
+        }
+
+        .testimonial-stars {
+            display: flex;
+            gap: 0.25rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-stars svg {
+            width: 20px;
+            height: 20px;
+            fill: var(--gold);
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-200);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            background: var(--coat-blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-info h4 {
+            font-weight: 600;
+            margin-bottom: 0.25rem;
+        }
+
+        .testimonial-info span {
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .testimonial-nav button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 1px solid var(--gray-700);
+            background: transparent;
+            color: var(--white);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .testimonial-nav button:hover {
+            background: var(--coat-blue);
+            border-color: var(--coat-blue);
+        }
+
+        /* Values Section */
+        .values {
+            padding: 8rem 2rem;
+            background: var(--white);
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .value-card {
+            text-align: center;
+            padding: 2.5rem 1.5rem;
+            background: var(--gray-50);
+            border-radius: 24px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, var(--coat-blue) 0%, #0066ff 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .value-card:hover::before {
+            opacity: 1;
+        }
+
+        .value-card > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .value-letter {
+            font-family: 'Instrument Serif', serif;
+            font-size: 4.5rem;
+            color: var(--coat-blue);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+            transition: color 0.4s ease;
+        }
+
+        .value-card:hover .value-letter {
+            color: var(--white);
+        }
+
+        .value-word {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: color 0.4s ease;
+        }
+
+        .value-card:hover .value-word {
+            color: var(--white);
+        }
+
+        .value-card p {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            transition: color 0.4s ease;
+        }
+
+        .value-card:hover p {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 10rem 2rem;
+            background: linear-gradient(135deg, var(--coat-blue) 0%, #002d6d 100%);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            opacity: 0.03;
+            pointer-events: none;
+        }
+
+        .cta::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .cta h2 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            color: var(--white);
+            margin-bottom: 1.25rem;
+        }
+
+        .cta p {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 3rem;
+        }
+
+        .cta .btn-primary {
+            background: var(--white);
+            color: var(--coat-blue);
+            font-size: 1.1rem;
+            padding: 1.25rem 2.5rem;
+        }
+
+        .cta .btn-primary:hover {
+            background: var(--gray-100);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        .cta-contact {
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+
+        .cta-contact a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            transition: border-color 0.3s ease;
+        }
+
+        .cta-contact a:hover {
+            border-color: var(--white);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 5rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .footer-brand .logo {
+            color: var(--white);
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-brand p {
+            color: var(--gray-400);
+            font-size: 0.95rem;
+            max-width: 300px;
+            line-height: 1.7;
+        }
+
+        .footer-col h4 {
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+            color: var(--gray-400);
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 0.85rem;
+        }
+
+        .footer-col a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            display: inline-block;
+        }
+
+        .footer-col a:hover {
+            color: var(--coat-blue);
+            transform: translateX(3px);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            color: var(--gray-400);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid var(--gray-700);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--coat-blue);
+            border-color: var(--coat-blue);
+        }
+
+        /* Sticky Mobile CTA */
+        .mobile-cta {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem;
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            z-index: 999;
+            box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-cta a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            background: var(--coat-blue);
+            color: var(--white);
+            padding: 1rem;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 1024px) {
+            .services-grid {
+                grid-template-columns: 1fr;
+                max-width: 500px;
+            }
+
+            .values-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .transformation-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .testimonial-card {
+                flex: 0 0 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--white);
+                flex-direction: column;
+                padding: 1.5rem;
+                gap: 1rem;
+                border-bottom: 1px solid var(--gray-200);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-cta {
+                display: none;
+            }
+
+            .nav-toggle {
+                display: flex;
+            }
+
+            .hero {
+                padding: 7rem 1.5rem 3rem;
+                min-height: auto;
+                padding-bottom: 5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                width: 100%;
+                max-width: 300px;
+            }
+
+            .btn-primary, .btn-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .scroll-indicator {
+                display: none;
+            }
+
+            .trust-container {
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .services, .process, .values, .cta, .transformation, .testimonials {
+                padding: 5rem 1.5rem;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .process-steps::before {
+                left: 29px;
+            }
+
+            .process-step {
+                grid-template-columns: 60px 1fr;
+                gap: 1rem;
+            }
+
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.25rem;
+            }
+
+            .values-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+
+            .value-letter {
+                font-size: 3rem;
+            }
+
+            .value-card {
+                padding: 1.5rem 1rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .footer-brand p {
+                max-width: none;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+
+            .mobile-cta {
+                display: block;
+            }
+
+            footer {
+                padding-bottom: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Loader -->
+    <div class="page-loader">
+        <div class="loader-logo">
+            <svg viewBox="0 0 100 120">
+                <path d="M50 0C50 0 0 60 0 80C0 102.091 22.386 120 50 120C77.614 120 100 102.091 100 80C100 60 50 0 50 0ZM50 110C28.461 110 11 95.449 11 80C11 67.5 40 25 50 10C60 25 89 67.5 89 80C89 95.449 71.539 110 50 110Z"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <a href="#" class="logo">
+            <svg viewBox="0 0 100 120" fill="currentColor">
+                <path d="M50 0C50 0 0 60 0 80C0 102.091 22.386 120 50 120C77.614 120 100 102.091 100 80C100 60 50 0 50 0ZM50 110C28.461 110 11 95.449 11 80C11 67.5 40 25 50 10C60 25 89 67.5 89 80C89 95.449 71.539 110 50 110Z"/>
+            </svg>
+            COAT
+        </a>
+        <ul class="nav-links">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#testimonials">Reviews</a></li>
+            <li><a href="#values">About</a></li>
+        </ul>
+        <a href="#contact" class="nav-cta">Free Quote</a>
+        <div class="nav-toggle" onclick="toggleNav()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <svg class="hero-droplet" viewBox="0 0 100 120" fill="#0047ab">
+            <path d="M50 0C50 0 0 60 0 80C0 102.091 22.386 120 50 120C77.614 120 100 102.091 100 80C100 60 50 0 50 0ZM50 110C28.461 110 11 95.449 11 80C11 67.5 40 25 50 10C60 25 89 67.5 89 80C89 95.449 71.539 110 50 110Z"/>
+        </svg>
+        <div class="hero-content">
+            <div class="hero-badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                Aggie-Owned & Operated
+            </div>
+            <p class="hero-tagline">Bryan-College Station's Premier Flooring Specialists</p>
+            <h1>Surfaces built to <em>last.</em></h1>
+            <p class="hero-subtitle">Premium epoxy floors, polished concrete, and industrial coatings. Family-owned. Principle-driven. Serving the Texas Triangle.</p>
+            <div class="hero-buttons">
+                <a href="#contact" class="btn-primary">
+                    Get a Free Quote
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+                <a href="#services" class="btn-secondary">Explore Services</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll</span>
+            <div class="mouse"></div>
+        </div>
+    </section>
+
+    <!-- Trust Bar -->
+    <section class="trust-bar">
+        <div class="trust-container reveal">
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Licensed & Insured
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M7 15h0M2 9h20"/></svg>
+                PayPal Financing
+            </div>
+            <div class="trust-item gold">
+                <svg viewBox="0 0 24 24" fill="currentColor"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                5-Star Rated
+            </div>
+            <div class="trust-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                Clear, Written Proposals
+            </div>
+        </div>
+    </section>
+
+    <!-- Before/After Transformation -->
+    <section class="transformation">
+        <div class="transformation-container">
+            <div class="transformation-grid">
+                <div class="transformation-content reveal-left">
+                    <p class="section-label">See the Difference</p>
+                    <h2>From concrete to showpiece</h2>
+                    <p>Every project starts with a vision. We transform tired, cracked, and stained concrete into surfaces that perform and impress — whether it's your dream garage or a 50,000 sq ft warehouse.</p>
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Projects</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Exp.</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ba-slider reveal-right" id="baSlider">
+                    <!-- Replace these with your actual before/after images -->
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Crect fill='%23a0a0a0' width='800' height='600'/%3E%3Ctext fill='%23666' font-family='sans-serif' font-size='32' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EBefore Image%3C/text%3E%3C/svg%3E" alt="Before" class="ba-image before">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='600' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%230047ab'/%3E%3Cstop offset='100%25' stop-color='%23003080'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23g)' width='800' height='600'/%3E%3Ctext fill='white' font-family='sans-serif' font-size='32' x='50%25' y='50%25' text-anchor='middle' dy='.3em'%3EAfter Image%3C/text%3E%3C/svg%3E" alt="After" class="ba-image after" id="afterImage">
+                    <div class="ba-slider-line" id="sliderLine"></div>
+                    <div class="ba-slider-handle" id="sliderHandle">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 8L22 12L18 16"/>
+                            <path d="M6 8L2 12L6 16"/>
+                        </svg>
+                    </div>
+                    <span class="ba-label before">Before</span>
+                    <span class="ba-label after">After</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section class="services" id="services">
+        <div class="section-header reveal">
+            <p class="section-label">Our Systems</p>
+            <h2>Three ways to transform your space</h2>
+            <p>From home garages to industrial warehouses, we have a solution engineered for your needs.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card reveal">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                        <polyline points="9,22 9,12 15,12 15,22"/>
+                    </svg>
+                </div>
+                <h3>COAT | <span>Home</span></h3>
+                <p>Transform your garage, man cave, or home gym into a showpiece. Durable, beautiful floors that cure in a day and last a lifetime.</p>
+                <div class="service-features">
+                    <span>Garage Floors</span>
+                    <span>Man Caves</span>
+                    <span>Home Gyms</span>
+                    <span>Workshops</span>
+                </div>
+            </div>
+            <div class="service-card reveal" style="transition-delay: 0.1s;">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                    </svg>
+                </div>
+                <h3>COAT | <span>Shine</span></h3>
+                <p>True mechanical polish for premium interiors. Our CoreLock™ and SeamLock™ systems deliver depth, clarity, and resilience.</p>
+                <div class="service-features">
+                    <span>Polished Concrete</span>
+                    <span>Retail Showrooms</span>
+                    <span>Modern Homes</span>
+                    <span>Offices</span>
+                </div>
+            </div>
+            <div class="service-card reveal" style="transition-delay: 0.2s;">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                        <path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/>
+                    </svg>
+                </div>
+                <h3>COAT | <span>Pro</span></h3>
+                <p>Commercial-grade coatings for warehouses, restaurants, hangars, and healthcare. Built for uptime, compliance, and performance.</p>
+                <div class="service-features">
+                    <span>Warehouses</span>
+                    <span>Restaurants</span>
+                    <span>Healthcare</span>
+                    <span>Industrial</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process -->
+    <section class="process" id="process">
+        <div class="process-container">
+            <div class="section-header reveal">
+                <p class="section-label">The COAT Process™</p>
+                <h2>From walkthrough to reveal</h2>
+                <p>Every project follows our proven five-step system.</p>
+            </div>
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <span class="step-number">01</span>
+                    <div class="step-content">
+                        <h3>Walkthrough</h3>
+                        <p>We meet you on site, face-to-face. We inspect the surface, take measurements, and help you choose the right system based on traffic, moisture, design goals, and timeline.</p>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <span class="step-number">02</span>
+                    <div class="step-content">
+                        <h3>COATPrep™</h3>
+                        <p>Proper prep is everything. We grind, repair cracks, and moisture-test every slab. No shortcuts — just the foundation for a floor that lasts.</p>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <span class="step-number">03</span>
+                    <div class="step-content">
+                        <h3>Install</h3>
+                        <p>Our crews work with precision and respect. Clean job sites, clear communication, and craftsmanship you can see in every corner.</p>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <span class="step-number">04</span>
+                    <div class="step-content">
+                        <h3>Final Reveal</h3>
+                        <p>We walk the finished floor together. Every edge inspected, every detail confirmed. You don't pay until you're thrilled.</p>
+                    </div>
+                </div>
+                <div class="process-step reveal">
+                    <span class="step-number">05</span>
+                    <div class="step-content">
+                        <h3>COATCare™</h3>
+                        <p>We stay with you after install. Our maintenance guidance and support ensure your floor looks stunning for years to come.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="section-header reveal">
+            <p class="section-label">Client Stories</p>
+            <h2>Don't take our word for it</h2>
+            <p>Hear from homeowners and businesses across the Texas Triangle.</p>
+        </div>
+        <div class="testimonial-slider reveal">
+            <div class="testimonial-track" id="testimonialTrack">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                    </div>
+                    <p class="testimonial-quote">"Talor and his team transformed our garage into something out of a magazine. The attention to detail was incredible, and they finished ahead of schedule. Highly recommend!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MR</div>
+                        <div class="testimonial-info">
+                            <h4>Michael R.</h4>
+                            <span>Bryan, TX — Garage Floor</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                    </div>
+                    <p class="testimonial-quote">"We needed our warehouse floor done without disrupting operations. COAT worked around our schedule and delivered a floor that's holding up perfectly under heavy forklift traffic."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SK</div>
+                        <div class="testimonial-info">
+                            <h4>Sarah K.</h4>
+                            <span>College Station, TX — Warehouse</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                        <svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                    </div>
+                    <p class="testimonial-quote">"The polished concrete in our showroom has gotten so many compliments from customers. Professional team, fair pricing, and the results speak for themselves."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JD</div>
+                        <div class="testimonial-info">
+                            <h4>James D.</h4>
+                            <span>Houston, TX — Retail Showroom</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <button onclick="slideTestimonials(-1)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+                </button>
+                <button onclick="slideTestimonials(1)">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values -->
+    <section class="values" id="values">
+        <div class="section-header reveal">
+            <p class="section-label">Our Values</p>
+            <h2>What COAT stands for</h2>
+            <p>More than a name — it's how we operate.</p>
+        </div>
+        <div class="values-grid">
+            <div class="value-card reveal">
+                <div class="value-letter">C</div>
+                <div class="value-word">Character</div>
+                <p>We lead with integrity and principle. Who we are in private defines what we deliver in public.</p>
+            </div>
+            <div class="value-card reveal" style="transition-delay: 0.1s;">
+                <div class="value-letter">O</div>
+                <div class="value-word">Ownership</div>
+                <p>We take full responsibility. Every project, every detail, every promise is ours to uphold.</p>
+            </div>
+            <div class="value-card reveal" style="transition-delay: 0.2s;">
+                <div class="value-letter">A</div>
+                <div class="value-word">Accountability</div>
+                <p>We do what we say, when we say it. No excuses, no exceptions.</p>
+            </div>
+            <div class="value-card reveal" style="transition-delay: 0.3s;">
+                <div class="value-letter">T</div>
+                <div class="value-word">Trust</div>
+                <p>We earn it through transparency, consistency, and excellence in follow-through.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+        <div class="cta-content reveal">
+            <h2>Ready to transform your space?</h2>
+            <p>Get a free, no-pressure quote. Most site walks happen within 72 hours of your call.</p>
+            <a href="tel:9794467639" class="btn-primary">
+                Call (979) 446-7639
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+            </a>
+            <p class="cta-contact">
+                Or email us at <a href="mailto:team@coatfloors.com">team@coatfloors.com</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <svg viewBox="0 0 100 120" fill="currentColor" width="24" height="24">
+                        <path d="M50 0C50 0 0 60 0 80C0 102.091 22.386 120 50 120C77.614 120 100 102.091 100 80C100 60 50 0 50 0ZM50 110C28.461 110 11 95.449 11 80C11 67.5 40 25 50 10C60 25 89 67.5 89 80C89 95.449 71.539 110 50 110Z"/>
+                    </svg>
+                    COAT
+                </a>
+                <p>Premium epoxy floors, polished concrete, and industrial coatings. Family-owned and operated in Bryan-College Station, Texas.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#services">COAT | Home</a></li>
+                    <li><a href="#services">COAT | Shine</a></li>
+                    <li><a href="#services">COAT | Pro</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#values">About Us</a></li>
+                    <li><a href="#process">Our Process</a></li>
+                    <li><a href="#testimonials">Reviews</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:9794467639">(979) 446-7639</a></li>
+                    <li><a href="mailto:team@coatfloors.com">team@coatfloors.com</a></li>
+                    <li><a href="#contact">Free Quote</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2025 COAT LLC. All rights reserved. Licensed & Insured.</p>
+            <div class="social-links">
+                <a href="https://facebook.com" target="_blank" aria-label="Facebook">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+                </a>
+                <a href="https://instagram.com" target="_blank" aria-label="Instagram">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Sticky CTA -->
+    <div class="mobile-cta">
+        <a href="tel:9794467639">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            Get Your Free Quote — (979) 446-7639
+        </a>
+    </div>
+
+    <script>
+        // Page Loader
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                document.querySelector('.page-loader').classList.add('loaded');
+            }, 800);
+        });
+
+        // Mobile nav toggle
+        function toggleNav() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    document.querySelector('.nav-links').classList.remove('active');
+                }
+            });
+        });
+
+        // Nav scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Scroll reveal animations
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const elementTop = el.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    el.classList.add('active');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // Before/After Slider
+        const baSlider = document.getElementById('baSlider');
+        const afterImage = document.getElementById('afterImage');
+        const sliderLine = document.getElementById('sliderLine');
+        const sliderHandle = document.getElementById('sliderHandle');
+
+        let isDragging = false;
+
+        const updateSlider = (x) => {
+            const rect = baSlider.getBoundingClientRect();
+            let percent = ((x - rect.left) / rect.width) * 100;
+            percent = Math.max(0, Math.min(100, percent));
+            
+            afterImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+            sliderLine.style.left = `${percent}%`;
+            sliderHandle.style.left = `${percent}%`;
+        };
+
+        baSlider.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            updateSlider(e.clientX);
+        });
+
+        document.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                updateSlider(e.clientX);
+            }
+        });
+
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+
+        baSlider.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            updateSlider(e.touches[0].clientX);
+        });
+
+        baSlider.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                updateSlider(e.touches[0].clientX);
+            }
+        });
+
+        baSlider.addEventListener('touchend', () => {
+            isDragging = false;
+        });
+
+        // Testimonial Slider
+        let testimonialIndex = 0;
+        const track = document.getElementById('testimonialTrack');
+        
+        function slideTestimonials(direction) {
+            const cards = track.querySelectorAll('.testimonial-card');
+            const maxIndex = cards.length - (window.innerWidth > 1024 ? 2 : 1);
+            
+            testimonialIndex += direction;
+            testimonialIndex = Math.max(0, Math.min(testimonialIndex, maxIndex));
+            
+            const cardWidth = cards[0].offsetWidth + 32; // card width + gap
+            track.style.transform = `translateX(-${testimonialIndex * cardWidth}px)`;
+        }
+    </script>
+</body>
+</html>
