@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>COAT | Premium Epoxy & Polished Concrete | Texas</title>
     <meta name="description" content="Premium epoxy flooring & polished concrete. Family-owned, principle-driven. Serving Texas. Free quotes within 24 hours – Call (979) 446-7639.">
+    
+    <!-- Open Graph / Social Share -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="COAT | Premium Epoxy & Polished Concrete">
+    <meta property="og:description" content="Premium epoxy flooring & polished concrete. Family-owned, principle-driven. Serving Texas.">
+    <meta property="og:image" content="https://coatfloors.com/assets/logo.svg">
+    <meta property="og:url" content="https://coatfloors.com">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="COAT | Premium Epoxy & Polished Concrete">
+    <meta name="twitter:description" content="Premium epoxy flooring & polished concrete. Family-owned, principle-driven. Serving Texas.">
+    <meta name="twitter:image" content="https://coatfloors.com/assets/logo.svg">
+    
     <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0C50 0 0 60 0 80C0 102.091 22.386 120 50 120C77.614 120 100 102.091 100 80C100 60 50 0 50 0Z' fill='%230047ab'/%3E%3C/svg%3E" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,7 +35,7 @@
             --blue: #0047ab;
             --blue-glow: rgba(0, 71, 171, 0.15);
         }
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
         body {
             background: var(--black);
             color: var(--white);
@@ -80,8 +94,10 @@
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .nav-cta:hover { background: var(--white); color: var(--black); }
-        .nav-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 10px; }
+        .nav-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 10px; z-index: 101; }
         .nav-toggle span { width: 24px; height: 1px; background: var(--white); transition: all 0.3s ease; }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { transform: rotate(-45deg); }
         .mobile-nav {
             display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
             background: var(--black); z-index: 99;
@@ -285,7 +301,7 @@
             user-select: none;
             -webkit-user-drag: none;
         }
-        .ba-image.after { clip-path: inset(0 50% 0 0); }
+        .ba-image.after { clip-path: inset(0 0 0 50%); }
         .ba-slider-line {
             position: absolute; top: 0; bottom: 0; left: 50%;
             width: 2px; background: var(--white);
@@ -724,10 +740,9 @@
         <div class="origin-section">
             <div class="origin-content">
                 <h3>Built on <em>principle</em>, not just concrete.</h3>
-                <p class="origin-text">In 2015, fresh out of Texas A&M, I took my first job in flooring. We covered everything—hardwood, tile, carpet, vinyl—everything except the garage. For nearly a decade, I learned the trade working for others, grateful for every lesson but knowing there was more.</p>
-                <p class="origin-text">My wife Vivian saw it. Close friends saw it. They kept saying the same thing: you have more in you.</p>
-                <p class="origin-text">Then our son Valor was born. A good friend told me something that changed everything: "When you have a kid, you stop working and start building." That hit different. It wasn't about a paycheck anymore—it was about legacy. About creating something that would outlast me. Something built on honoring God, taking dominion, and building the Kingdom.</p>
-                <p class="origin-text">COAT launched in 2025. We chose the one floor nobody else wanted to do—and we're doing it with excellence, integrity, and purpose. This isn't just a business. It's a calling.</p>
+                <p class="origin-text">COAT was born from a simple belief: the floor beneath your feet should be built with the same integrity as the life you're building on top of it.</p>
+                <p class="origin-text">After nearly a decade in the flooring industry—covering everything from hardwood to tile to carpet—we saw an opportunity. The garage, the workshop, the warehouse floor. The spaces everyone else overlooked. We chose to master the one floor nobody wanted to do, and do it with excellence.</p>
+                <p class="origin-text">Today, COAT is a family business serving Texas homeowners and businesses who refuse to settle. We're Aggies, we're Kingdom-minded, and we believe that how you build matters as much as what you build. This isn't just a job—it's a calling to create something that lasts.</p>
                 <div class="origin-signature"><div class="signature-mark">TB</div><div class="signature-info"><span class="signature-name">Talor Byington</span><span class="signature-title">Founder</span></div></div>
             </div>
             <div class="origin-visual"><div class="origin-badge"><span class="origin-badge-label">Est.</span><span class="origin-badge-value">2025</span></div></div>
@@ -792,8 +807,14 @@
     <script>
         const nav = document.getElementById('mainNav');
         window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 100); });
-        function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('active'); }
-        function closeMobileNav() { document.getElementById('mobileNav').classList.remove('active'); }
+        function toggleMobileNav() { 
+            document.getElementById('mobileNav').classList.toggle('active'); 
+            document.querySelector('.nav-toggle').classList.toggle('active');
+        }
+        function closeMobileNav() { 
+            document.getElementById('mobileNav').classList.remove('active'); 
+            document.querySelector('.nav-toggle').classList.remove('active');
+        }
         const cursor = document.querySelector('.cursor');
         if (cursor && window.innerWidth > 480) {
             document.addEventListener('mousemove', (e) => { cursor.style.left = e.clientX - 10 + 'px'; cursor.style.top = e.clientY - 10 + 'px'; });
@@ -813,7 +834,7 @@
         const updateSlider = (x) => {
             const rect = baContainer.getBoundingClientRect();
             let percent = Math.max(0, Math.min(100, ((x - rect.left) / rect.width) * 100));
-            afterImage.style.clipPath = `inset(0 ${100 - percent}% 0 0)`;
+            afterImage.style.clipPath = `inset(0 0 0 ${percent}%)`;
             sliderLine.style.left = `${percent}%`;
             sliderHandle.style.left = `${percent}%`;
         };

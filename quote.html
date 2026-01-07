@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get a Free Quote | COAT | Texas Epoxy Flooring</title>
+    <meta name="description" content="Request a free quote for epoxy flooring, polished concrete, or commercial coatings. Response within 24 hours.">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Get a Free Quote | COAT">
+    <meta property="og:description" content="Request a free quote for epoxy flooring, polished concrete, or commercial coatings.">
+    <meta property="og:image" content="https://coatfloors.com/assets/logo.svg">
+    <meta property="og:url" content="https://coatfloors.com/quote">
+    
+    <link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 0C50 0 0 60 0 80C0 102.091 22.386 120 50 120C77.614 120 100 102.091 100 80C100 60 50 0 50 0Z' fill='%230047ab'/%3E%3C/svg%3E" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #0a0a0a;
+            --white: #f8f8f8;
+            --gray: #888;
+            --gray-dark: #333;
+            --gray-darker: #1a1a1a;
+            --blue: #0047ab;
+            --blue-glow: rgba(0, 71, 171, 0.15);
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            background: var(--black);
+            color: var(--white);
+            font-family: 'Inter', -apple-system, sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        .grain {
+            position: fixed; inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+            opacity: 0.03; pointer-events: none; z-index: 9998;
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+            padding: 1.5rem 4rem;
+            display: flex; justify-content: space-between; align-items: center;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--gray-dark);
+        }
+        .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 40px; width: auto; }
+        .logo-text {
+            font-family: 'Inter', sans-serif; font-weight: 500;
+            font-size: 0.85rem; letter-spacing: 0.3em;
+            color: var(--white); text-transform: uppercase;
+        }
+        .nav-links { display: flex; gap: 3rem; list-style: none; }
+        .nav-links a {
+            font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--white); text-decoration: none; opacity: 0.7;
+            transition: opacity 0.3s ease;
+        }
+        .nav-links a:hover { opacity: 1; }
+        .nav-cta {
+            font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+            color: var(--white); text-decoration: none;
+            padding: 1rem 2rem; border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.4s ease;
+        }
+        .nav-cta:hover { background: var(--white); color: var(--black); }
+        .nav-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 10px; }
+        .nav-toggle span { width: 24px; height: 1px; background: var(--white); }
+        .mobile-nav {
+            display: none; position: fixed; inset: 0;
+            background: var(--black); z-index: 99;
+            flex-direction: column; justify-content: center; align-items: center; gap: 2rem;
+        }
+        .mobile-nav.active { display: flex; }
+        .mobile-nav a { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--white); text-decoration: none; }
+
+        /* FORM CONTAINER */
+        .form-page {
+            min-height: 100vh;
+            padding: 10rem 2rem 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .form-container {
+            width: 100%;
+            max-width: 600px;
+        }
+        .form-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .form-badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            color: var(--blue);
+            margin-bottom: 1.5rem;
+        }
+        .form-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            font-weight: 400;
+            margin-bottom: 1rem;
+        }
+        .form-title em { font-style: italic; opacity: 0.4; }
+        .form-subtitle {
+            font-size: 1rem;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        /* PROGRESS BAR */
+        .progress-container {
+            margin-bottom: 3rem;
+        }
+        .progress-bar {
+            height: 2px;
+            background: var(--gray-dark);
+            border-radius: 1px;
+            overflow: hidden;
+        }
+        .progress-fill {
+            height: 100%;
+            background: var(--blue);
+            transition: width 0.4s ease;
+        }
+        .progress-text {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 0.75rem;
+            font-size: 0.7rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+
+        /* FORM STEPS */
+        .form-step {
+            display: none;
+        }
+        .form-step.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .step-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--gray-dark);
+        }
+
+        /* FORM FIELDS */
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .form-row.full {
+            grid-template-columns: 1fr;
+        }
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+        .form-label {
+            font-size: 0.7rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gray);
+        }
+        .form-label .required {
+            color: var(--blue);
+        }
+        .form-input, .form-select, .form-textarea {
+            background: var(--gray-darker);
+            border: 1px solid var(--gray-dark);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            padding: 1rem 1.25rem;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: var(--blue);
+            background: var(--black);
+        }
+        .form-input::placeholder {
+            color: var(--gray);
+        }
+        .form-select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            background-size: 1.25rem;
+            padding-right: 3rem;
+        }
+        .form-textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* RADIO & CHECKBOX OPTIONS */
+        .options-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+        .option-card {
+            position: relative;
+        }
+        .option-card input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+        .option-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem 1rem;
+            background: var(--gray-darker);
+            border: 1px solid var(--gray-dark);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+            min-height: 100px;
+        }
+        .option-label:hover {
+            border-color: var(--gray);
+        }
+        .option-card input:checked + .option-label {
+            border-color: var(--blue);
+            background: rgba(0, 71, 171, 0.1);
+        }
+        .option-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .option-text {
+            font-size: 0.85rem;
+            color: var(--gray);
+        }
+        .option-card input:checked + .option-label .option-text {
+            color: var(--white);
+        }
+
+        /* BUTTONS */
+        .form-buttons {
+            display: flex;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-dark);
+        }
+        .btn {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 1.25rem 2.5rem;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            border: none;
+        }
+        .btn-back {
+            background: none;
+            color: var(--gray);
+            border: 1px solid var(--gray-dark);
+        }
+        .btn-back:hover {
+            color: var(--white);
+            border-color: var(--white);
+        }
+        .btn-next, .btn-submit {
+            background: var(--white);
+            color: var(--black);
+            margin-left: auto;
+        }
+        .btn-next:hover, .btn-submit:hover {
+            background: var(--blue);
+            color: var(--white);
+        }
+        .btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        /* SUCCESS MESSAGE */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+        .success-message.active {
+            display: block;
+        }
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--blue);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+        }
+        .success-icon svg {
+            width: 40px;
+            height: 40px;
+            color: var(--blue);
+        }
+        .success-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .success-text {
+            color: var(--gray);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+        .success-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--white);
+            text-decoration: none;
+            padding: 1.25rem 2.5rem;
+            border: 1px solid var(--gray-dark);
+            transition: all 0.4s ease;
+        }
+        .success-link:hover {
+            background: var(--white);
+            color: var(--black);
+            border-color: var(--white);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            nav { padding: 1rem 1.5rem; }
+            .nav-links { display: none; }
+            .nav-toggle { display: flex; }
+            .form-page { padding: 8rem 1.5rem 3rem; }
+            .form-row { grid-template-columns: 1fr; }
+            .options-grid { grid-template-columns: 1fr; }
+            .form-buttons { flex-direction: column; }
+            .btn { width: 100%; text-align: center; }
+            .btn-next, .btn-submit { margin-left: 0; }
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+    
+    <div class="mobile-nav" id="mobileNav">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="index.html#work">Work</a>
+        <a href="index.html#foundation">Foundation</a>
+        <a href="index.html#contact">Contact</a>
+    </div>
+
+    <nav>
+        <a href="index.html" class="logo">
+            <img src="assets/logo.svg" alt="COAT" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <span class="logo-text" style="display:none;">COAT</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="services.html">Services</a></li>
+            <li><a href="index.html#work">Work</a></li>
+            <li><a href="index.html#foundation">Foundation</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
+        </ul>
+        <a href="tel:9794467639" class="nav-cta">Call Now</a>
+        <div class="nav-toggle" onclick="toggleMobileNav()"><span></span><span></span></div>
+    </nav>
+
+    <main class="form-page">
+        <div class="form-container">
+            <div class="form-header">
+                <span class="form-badge">Free Quote</span>
+                <h1 class="form-title">COAT | <em>Intake</em></h1>
+                <p class="form-subtitle">Tell us about your project. We'll get back to you within 24 hours with a personalized quote.</p>
+            </div>
+
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill" style="width: 20%"></div>
+                </div>
+                <div class="progress-text">
+                    <span id="stepIndicator">Step 1 of 5</span>
+                    <span id="stepName">Client Info</span>
+                </div>
+            </div>
+
+            <form action="https://formsubmit.co/team@coatfloors.com" method="POST" id="quoteForm">
+                <!-- FormSubmit Configuration -->
+                <input type="hidden" name="_subject" value="New COAT Quote Request">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="hidden" name="_next" value="https://coatfloors.com/quote.html?success=true">
+                <input type="text" name="_honey" style="display:none">
+
+                <!-- Step 1: Client Info -->
+                <div class="form-step active" id="step1">
+                    <h2 class="step-title">Client Info</h2>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">First Name <span class="required">*</span></label>
+                            <input type="text" name="First Name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Last Name <span class="required">*</span></label>
+                            <input type="text" name="Last Name" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Phone Number <span class="required">*</span></label>
+                            <input type="tel" name="Phone" class="form-input" placeholder="(___) ___-____" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email Address <span class="required">*</span></label>
+                            <input type="email" name="Email" class="form-input" required>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label class="form-label">Property Address <span class="required">*</span></label>
+                            <input type="text" name="Address" class="form-input" placeholder="Street address" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">City <span class="required">*</span></label>
+                            <input type="text" name="City" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">State <span class="required">*</span></label>
+                            <select name="State" class="form-select" required>
+                                <option value="">Select state</option>
+                                <option value="TX" selected>Texas</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Zip Code <span class="required">*</span></label>
+                            <input type="text" name="Zip" class="form-input" pattern="[0-9]{5}" required>
+                        </div>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-next" onclick="nextStep(1)">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 2: Property Type -->
+                <div class="form-step" id="step2">
+                    <h2 class="step-title">Property Type</h2>
+                    <div class="options-grid">
+                        <div class="option-card">
+                            <input type="radio" name="Property Type" value="Residential" id="residential" required>
+                            <label for="residential" class="option-label">
+                                <span class="option-icon">🏠</span>
+                                <span class="option-text">Residential</span>
+                            </label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="Property Type" value="Commercial" id="commercial">
+                            <label for="commercial" class="option-label">
+                                <span class="option-icon">🏢</span>
+                                <span class="option-text">Commercial</span>
+                            </label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="Property Type" value="Industrial" id="industrial">
+                            <label for="industrial" class="option-label">
+                                <span class="option-icon">🏭</span>
+                                <span class="option-text">Industrial</span>
+                            </label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="Property Type" value="Other" id="propOther">
+                            <label for="propOther" class="option-label">
+                                <span class="option-icon">📍</span>
+                                <span class="option-text">Other</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-back" onclick="prevStep(2)">Back</button>
+                        <button type="button" class="btn btn-next" onclick="nextStep(2)">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Service Type -->
+                <div class="form-step" id="step3">
+                    <h2 class="step-title">Service Needed</h2>
+                    <div class="options-grid">
+                        <div class="option-card">
+                            <input type="radio" name="Service Type" value="COAT Home - Epoxy" id="coatHome" required>
+                            <label for="coatHome" class="option-label">
+                                <span class="option-icon">🏠</span>
+                                <span class="option-text">COAT | Home<br><small style="opacity:0.6">Residential Epoxy</small></span>
+                            </label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="Service Type" value="COAT Shine - Polished Concrete" id="coatShine">
+                            <label for="coatShine" class="option-label">
+                                <span class="option-icon">✨</span>
+                                <span class="option-text">COAT | Shine<br><small style="opacity:0.6">Polished Concrete</small></span>
+                            </label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="Service Type" value="COAT Pro - Commercial" id="coatPro">
+                            <label for="coatPro" class="option-label">
+                                <span class="option-icon">🏗️</span>
+                                <span class="option-text">COAT | Pro<br><small style="opacity:0.6">Commercial/Industrial</small></span>
+                            </label>
+                        </div>
+                        <div class="option-card">
+                            <input type="radio" name="Service Type" value="Not Sure" id="notSure">
+                            <label for="notSure" class="option-label">
+                                <span class="option-icon">❓</span>
+                                <span class="option-text">Not Sure<br><small style="opacity:0.6">Help me decide</small></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-back" onclick="prevStep(3)">Back</button>
+                        <button type="button" class="btn btn-next" onclick="nextStep(3)">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 4: Project Details -->
+                <div class="form-step" id="step4">
+                    <h2 class="step-title">Project Details</h2>
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label class="form-label">Space Type</label>
+                            <select name="Space Type" class="form-select">
+                                <option value="">Select space type</option>
+                                <option value="Garage">Garage</option>
+                                <option value="Basement">Basement</option>
+                                <option value="Workshop">Workshop</option>
+                                <option value="Home Gym">Home Gym</option>
+                                <option value="Patio/Porch">Patio/Porch</option>
+                                <option value="Retail">Retail Space</option>
+                                <option value="Warehouse">Warehouse</option>
+                                <option value="Restaurant">Restaurant</option>
+                                <option value="Office">Office</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Approximate Square Footage</label>
+                            <select name="Square Footage" class="form-select">
+                                <option value="">Select size</option>
+                                <option value="Under 250 sq ft">Under 250 sq ft</option>
+                                <option value="250-500 sq ft">250-500 sq ft</option>
+                                <option value="500-1000 sq ft">500-1,000 sq ft</option>
+                                <option value="1000-2500 sq ft">1,000-2,500 sq ft</option>
+                                <option value="2500-5000 sq ft">2,500-5,000 sq ft</option>
+                                <option value="5000+ sq ft">5,000+ sq ft</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Current Floor Condition</label>
+                            <select name="Floor Condition" class="form-select">
+                                <option value="">Select condition</option>
+                                <option value="Bare Concrete">Bare Concrete</option>
+                                <option value="Painted">Painted</option>
+                                <option value="Existing Coating">Existing Coating</option>
+                                <option value="Damaged/Cracked">Damaged/Cracked</option>
+                                <option value="Not Sure">Not Sure</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-back" onclick="prevStep(4)">Back</button>
+                        <button type="button" class="btn btn-next" onclick="nextStep(4)">Next</button>
+                    </div>
+                </div>
+
+                <!-- Step 5: Timeline & Notes -->
+                <div class="form-step" id="step5">
+                    <h2 class="step-title">Timeline & Additional Info</h2>
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label class="form-label">When are you looking to start?</label>
+                            <select name="Timeline" class="form-select">
+                                <option value="">Select timeline</option>
+                                <option value="ASAP">As soon as possible</option>
+                                <option value="Within 2 weeks">Within 2 weeks</option>
+                                <option value="Within 1 month">Within 1 month</option>
+                                <option value="1-3 months">1-3 months</option>
+                                <option value="Just exploring">Just exploring options</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label class="form-label">How did you hear about us?</label>
+                            <select name="Referral Source" class="form-select">
+                                <option value="">Select one</option>
+                                <option value="Google Search">Google Search</option>
+                                <option value="Facebook">Facebook</option>
+                                <option value="Instagram">Instagram</option>
+                                <option value="Friend/Family">Friend or Family</option>
+                                <option value="Saw Our Work">Saw Our Work</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row full">
+                        <div class="form-group">
+                            <label class="form-label">Anything else we should know?</label>
+                            <textarea name="Additional Notes" class="form-textarea" placeholder="Tell us about your project, any special requirements, or questions you have..."></textarea>
+                        </div>
+                    </div>
+                    <div class="form-buttons">
+                        <button type="button" class="btn btn-back" onclick="prevStep(5)">Back</button>
+                        <button type="submit" class="btn btn-submit">Submit Request</button>
+                    </div>
+                </div>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 6L9 17l-5-5"/>
+                    </svg>
+                </div>
+                <h2 class="success-title">Request Received!</h2>
+                <p class="success-text">Thanks for reaching out. We'll review your project details and get back to you within 24 hours with a personalized quote.</p>
+                <a href="index.html" class="success-link">Back to Home</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function toggleMobileNav() {
+            document.getElementById('mobileNav').classList.toggle('active');
+        }
+
+        const stepNames = ['Client Info', 'Property Type', 'Service Needed', 'Project Details', 'Timeline'];
+        let currentStep = 1;
+        const totalSteps = 5;
+
+        function updateProgress() {
+            const progress = (currentStep / totalSteps) * 100;
+            document.getElementById('progressFill').style.width = progress + '%';
+            document.getElementById('stepIndicator').textContent = `Step ${currentStep} of ${totalSteps}`;
+            document.getElementById('stepName').textContent = stepNames[currentStep - 1];
+        }
+
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step' + step).classList.add('active');
+            currentStep = step;
+            updateProgress();
+        }
+
+        function nextStep(current) {
+            // Validate current step
+            const currentStepEl = document.getElementById('step' + current);
+            const requiredFields = currentStepEl.querySelectorAll('[required]');
+            let valid = true;
+            
+            requiredFields.forEach(field => {
+                if (!field.value) {
+                    valid = false;
+                    field.style.borderColor = '#ff4444';
+                } else {
+                    field.style.borderColor = '';
+                }
+            });
+
+            // For radio buttons, check if one is selected
+            const radioGroups = currentStepEl.querySelectorAll('input[type="radio"]');
+            if (radioGroups.length > 0) {
+                const groupName = radioGroups[0].name;
+                const selected = currentStepEl.querySelector(`input[name="${groupName}"]:checked`);
+                if (!selected) {
+                    valid = false;
+                }
+            }
+
+            if (valid && current < totalSteps) {
+                showStep(current + 1);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        function prevStep(current) {
+            if (current > 1) {
+                showStep(current - 1);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+
+        // Check for success parameter
+        if (window.location.search.includes('success=true')) {
+            document.getElementById('quoteForm').style.display = 'none';
+            document.querySelector('.progress-container').style.display = 'none';
+            document.getElementById('successMessage').classList.add('active');
+        }
+
+        // Phone formatting
+        document.querySelector('input[type="tel"]').addEventListener('input', function(e) {
+            let x = e.target.value.replace(/\D/g, '').match(/(\d{0,3})(\d{0,3})(\d{0,4})/);
+            e.target.value = !x[2] ? x[1] : '(' + x[1] + ') ' + x[2] + (x[3] ? '-' + x[3] : '');
+        });
+    </script>
+</body>
+</html>
