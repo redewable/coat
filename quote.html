@@ -73,8 +73,10 @@
             transition: all 0.4s ease;
         }
         .nav-cta:hover { background: var(--white); color: var(--black); }
-        .nav-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 10px; }
-        .nav-toggle span { width: 24px; height: 1px; background: var(--white); }
+        .nav-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 10px; z-index: 101; }
+        .nav-toggle span { width: 24px; height: 1px; background: var(--white); transition: all 0.3s ease; }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { transform: rotate(-45deg); }
         .mobile-nav {
             display: none; position: fixed; inset: 0;
             background: var(--black); z-index: 99;
@@ -674,6 +676,7 @@
     <script>
         function toggleMobileNav() {
             document.getElementById('mobileNav').classList.toggle('active');
+            document.querySelector('.nav-toggle').classList.toggle('active');
         }
 
         const stepNames = ['Client Info', 'Property Type', 'Service Needed', 'Project Details', 'Timeline'];

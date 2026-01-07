@@ -190,8 +190,10 @@
             transition: all 0.4s ease;
         }
         .nav-cta:hover { background: var(--white); color: var(--black); }
-        .nav-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 10px; }
-        .nav-toggle span { width: 24px; height: 1px; background: var(--white); }
+        .nav-toggle { display: none; flex-direction: column; gap: 6px; cursor: pointer; padding: 10px; z-index: 101; }
+        .nav-toggle span { width: 24px; height: 1px; background: var(--white); transition: all 0.3s ease; }
+        .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+        .nav-toggle.active span:nth-child(2) { transform: rotate(-45deg); }
         .mobile-nav {
             display: none; position: fixed; inset: 0;
             background: var(--black); z-index: 99;
@@ -527,7 +529,7 @@
         <a href="services.html">Services</a>
         <a href="index.html#work">Work</a>
         <a href="index.html#foundation">Foundation</a>
-        <a href="quote.html">Contact</a>
+        <a href="index.html#contact">Contact</a>
     </div>
 
     <nav>
@@ -536,7 +538,7 @@
             <li><a href="services.html" class="active">Services</a></li>
             <li><a href="index.html#work">Work</a></li>
             <li><a href="index.html#foundation">Foundation</a></li>
-            <li><a href="quote.html">Contact</a></li>
+            <li><a href="index.html#contact">Contact</a></li>
         </ul>
         <a href="quote.html" class="nav-cta">Get Quote</a>
         <div class="nav-toggle" onclick="toggleMobileNav()"><span></span><span></span></div>
@@ -819,7 +821,7 @@
                 </div>
             </div>
             <div class="footer-col"><h4>Services</h4><ul><li><a href="#home">COAT | Home</a></li><li><a href="#shine">COAT | Shine</a></li><li><a href="#pro">COAT | Pro</a></li></ul></div>
-            <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html#work">Our Work</a></li><li><a href="index.html#foundation">The Foundation</a></li><li><a href="quote.html">Contact</a></li></ul></div>
+            <div class="footer-col"><h4>Company</h4><ul><li><a href="index.html#work">Our Work</a></li><li><a href="index.html#foundation">The Foundation</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
             <div class="footer-col"><h4>Connect</h4><ul><li><a href="tel:9794467639">(979) 446-7639</a></li><li><a href="mailto:team@coatfloors.com">team@coatfloors.com</a></li></ul></div>
         </div>
         <div class="footer-bottom">
@@ -829,7 +831,10 @@
     </footer>
 
     <script>
-        function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('active'); }
+        function toggleMobileNav() { 
+            document.getElementById('mobileNav').classList.toggle('active'); 
+            document.querySelector('.nav-toggle').classList.toggle('active');
+        }
         function toggleFaq(button) {
             const item = button.parentElement;
             const wasActive = item.classList.contains('active');
