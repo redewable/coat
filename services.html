@@ -24,10 +24,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Epoxy Flooring & Polished Concrete Services | COAT">
     <meta name="twitter:description" content="Premium epoxy flooring, polished concrete, and commercial coatings. Family-owned, serving all of Texas.">
-    <meta name="twitter:image" content="https://coatfloors.com/assets/logo.svg">
+    <meta name="twitter:image" content="https://coatfloors.com/assets/coat-social-share.png">
     
     <!-- Open Graph Image -->
-    <meta property="og:image" content="https://coatfloors.com/assets/logo.svg">
+    <meta property="og:image" content="https://coatfloors.com/assets/coat-social-share.png">
     
     <!-- Geo Tags -->
     <meta name="geo.region" content="US-TX">
@@ -146,7 +146,7 @@
             --gray-dark: #333;
             --gray-darker: #1a1a1a;
             --blue: #0047ab;
-            --blue-glow: rgba(0, 71, 171, 0.15);
+            --blue-glow: rgba(0, 71, 171, 0.3);
         }
         html { scroll-behavior: smooth; }
         body {
@@ -171,6 +171,7 @@
             border-bottom: 1px solid var(--gray-dark);
         }
         .logo { display: flex; align-items: center; text-decoration: none; }
+        .logo img { height: 40px; width: auto; }
         .logo-text {
             font-family: 'Inter', sans-serif; font-weight: 500;
             font-size: 0.85rem; letter-spacing: 0.3em;
@@ -446,6 +447,7 @@
         .footer-main { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; margin-bottom: 6rem; }
         .footer-brand { max-width: 350px; }
         .footer-logo { display: inline-block; margin-bottom: 1.5rem; text-decoration: none; }
+        .footer-logo img { height: 36px; width: auto; }
         .footer-logo-text {
             font-family: 'Inter', sans-serif; font-weight: 500;
             font-size: 0.85rem; letter-spacing: 0.3em;
@@ -533,7 +535,7 @@
     </div>
 
     <nav>
-        <a href="index.html" class="logo"><span class="logo-text">COAT</span></a>
+        <a href="index.html" class="logo"><img src="assets/logo.png" alt="COAT" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span class="logo-text" style="display:none;">COAT</span></a>
         <ul class="nav-links">
             <li><a href="services.html" class="active">Services</a></li>
             <li><a href="index.html#work">Work</a></li>
@@ -813,7 +815,7 @@
     <footer>
         <div class="footer-main">
             <div class="footer-brand">
-                <a href="index.html" class="footer-logo"><span class="footer-logo-text">COAT</span></a>
+                <a href="index.html" class="footer-logo"><img src="assets/logo.png" alt="COAT" onerror="this.style.display='none';this.nextElementSibling.style.display='block';"><span class="footer-logo-text" style="display:none;">COAT</span></a>
                 <p class="footer-tagline">Premium epoxy floors, polished concrete, and industrial coatings. Family-owned. Kingdom-minded. Surfaces built to last.</p>
                 <div class="footer-social">
                     <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
