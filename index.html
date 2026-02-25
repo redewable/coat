@@ -113,8 +113,10 @@
         .hero-bg{position:absolute;inset:0;z-index:0}
         .hero-bg::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;background:radial-gradient(circle,var(--blue-glow) 0%,transparent 70%);opacity:0.5;animation:breathe 8s ease-in-out infinite}
         @keyframes breathe{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:0.4}50%{transform:translate(-50%,-50%) scale(1.3);opacity:0.6}}
-        .hero-image{position:absolute;inset:0;z-index:0}
-        .hero-image img{width:100%;height:100%;object-fit:cover;opacity:0.15}
+        .hero-video{position:absolute;inset:0;z-index:0;overflow:hidden}
+        .hero-video video{width:100%;height:100%;object-fit:cover;opacity:0.2}
+        .hero-video .hero-fallback{width:100%;height:100%;object-fit:cover;opacity:0.15;display:none}
+        @media(max-width:768px){.hero-video video{display:none}.hero-video .hero-fallback{display:block}}
         .hero-content{position:relative;z-index:2;text-align:center;padding:0 2rem;max-width:1400px}
         .hero-badge{display:inline-block;font-size:0.65rem;letter-spacing:0.4em;text-transform:uppercase;color:var(--blue);margin-bottom:2rem;padding:0.5rem 1.5rem;border:1px solid rgba(0,71,171,0.3);opacity:0;animation:revealUp 1s var(--ease-out-expo) 0.2s forwards}
         .hero-headline{font-family:'Playfair Display',Georgia,serif;font-size:clamp(3.5rem,10vw,9rem);font-weight:400;line-height:0.95;letter-spacing:-0.03em;margin-bottom:2rem;opacity:0;animation:revealUp 1.2s var(--ease-out-expo) 0.3s forwards}
@@ -460,7 +462,13 @@
     <!-- HERO -->
     <section class="hero" id="top">
         <div class="hero-bg"></div>
-        <div class="hero-image"><img src="assets/coat-shine.webp" alt="Premium polished concrete flooring in modern living space" width="1920" height="1280" fetchpriority="high"></div>
+        <div class="hero-video">
+            <video autoplay muted loop playsinline preload="auto" poster="assets/coat-shine.webp">
+                <source src="assets/hero-video.webm" type="video/webm">
+                <source src="assets/hero-video.mp4" type="video/mp4">
+            </video>
+            <img class="hero-fallback" src="assets/coat-shine.webp" alt="Premium polished concrete flooring" width="1920" height="1280">
+        </div>
         <span class="side-text left">Serving All of Texas</span>
         <span class="side-text right">Est. 2025</span>
         <div class="hero-content">
@@ -546,15 +554,15 @@
             </div>
         </div>
 
-        <!-- Gallery row 2: residential detail shots -->
+        <!-- Gallery row 2: residential projects -->
         <div class="portfolio-grid reveal" style="grid-template-columns: 1fr 1fr; margin-top:1.5rem;">
             <div class="portfolio-item" style="aspect-ratio:4/3">
-                <img src="assets/residential-flake-1.webp" alt="Close-up of premium flake epoxy floor coating showing mirror-like gloss finish" loading="lazy" width="1920" height="1440">
-                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>Flake Detail</h3><p>Full-Broadcast Flake Epoxy &mdash; Residential</p></div></div>
+                <img src="assets/residential-flake-1.webp" alt="Close-up of premium brindle flake epoxy floor showing mirror-like gloss finish" loading="lazy" width="1920" height="1440">
+                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>Brindle Flake Detail</h3><p>Full-Broadcast Flake &mdash; Residential</p></div></div>
             </div>
             <div class="portfolio-item" style="aspect-ratio:4/3">
-                <img src="assets/residential-flake-2.webp" alt="Residential epoxy flake floor with high-gloss polyaspartic topcoat" loading="lazy" width="1920" height="1440">
-                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>Glass-Like Finish</h3><p>Polyaspartic Topcoat &mdash; Residential</p></div></div>
+                <img src="assets/coat-shine.webp" alt="Polished concrete floor in modern luxury living room with wood accent wall" loading="lazy" width="1920" height="1280">
+                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>Modern Living</h3><p>Polished Concrete &mdash; COAT | Shine</p></div></div>
             </div>
         </div>
 
