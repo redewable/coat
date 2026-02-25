@@ -188,6 +188,8 @@
         .section-title em{font-style:italic;opacity:0.4}
         .section-subtitle{font-size:0.75rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gray);max-width:300px;text-align:right;line-height:1.8}
         .portfolio-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:1.5rem;margin-bottom:1.5rem}
+        .portfolio-grid.single{grid-template-columns:1fr}
+        .portfolio-grid.triple{grid-template-columns:1fr 1fr 1fr;margin-top:1.5rem}
         .portfolio-item{position:relative;overflow:hidden;aspect-ratio:16/10;background:var(--gray-darker)}
         .portfolio-item.tall{aspect-ratio:9/12}
         .portfolio-item img{width:100%;height:100%;object-fit:cover;transition:transform 0.8s var(--ease-out-expo)}
@@ -200,7 +202,7 @@
         /* BEFORE/AFTER */
         .featured-project{position:relative;margin-bottom:6rem}
         .project-label{position:absolute;top:-2.5rem;left:0;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray)}
-        .ba-container{position:relative;width:100%;aspect-ratio:21/9;border-radius:4px;overflow:hidden;cursor:ew-resize;background:var(--gray-darker);user-select:none;-webkit-user-select:none}
+        .ba-container{position:relative;width:100%;max-width:1100px;margin:0 auto;aspect-ratio:16/9;border-radius:4px;overflow:hidden;cursor:ew-resize;background:var(--gray-darker);user-select:none;-webkit-user-select:none}
         .ba-image{position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;pointer-events:none;user-select:none;-webkit-user-drag:none}
         .ba-image.after{clip-path:inset(0 0 0 50%)}
         .ba-slider-line{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--white);transform:translateX(-50%);z-index:10;pointer-events:none}
@@ -366,7 +368,7 @@
             .service-card{grid-template-columns:60px 1fr auto;gap:2rem}.service-desc{display:none}
             .trust-bar{padding:0 2rem;margin-top:-2rem}
             .trust-bar-inner{grid-template-columns:repeat(2,1fr)}
-            .portfolio-grid,.portfolio-row-2{grid-template-columns:1fr}
+            .portfolio-grid,.portfolio-grid.triple,.portfolio-row-2{grid-template-columns:1fr}
             .portfolio-item.tall{aspect-ratio:16/10}
             .ba-container{aspect-ratio:16/9}
             .project-meta{gap:2rem;flex-wrap:wrap}
@@ -546,23 +548,27 @@
             <p class="section-subtitle">Every surface tells a story of craftsmanship and precision.</p>
         </div>
 
-        <!-- Gallery row 1: wide hero shot -->
-        <div class="portfolio-grid reveal" style="grid-template-columns: 1fr;">
+        <!-- Gallery row 1: wide commercial hero shot -->
+        <div class="portfolio-grid single reveal">
             <div class="portfolio-item" style="aspect-ratio:21/9">
                 <img src="assets/FullSizeRender.webp" alt="Metallic epoxy floor with blue and gold swirl pattern in commercial space" loading="lazy" width="1920" height="1280">
                 <div class="portfolio-overlay"><div class="portfolio-caption"><h3>New Heights Church</h3><p>Metallic Epoxy &mdash; College Station, TX</p></div></div>
             </div>
         </div>
 
-        <!-- Gallery row 2: residential projects -->
-        <div class="portfolio-grid reveal" style="grid-template-columns: 1fr 1fr; margin-top:1.5rem;">
+        <!-- Gallery row 2: residential projects (3-up) -->
+        <div class="portfolio-grid triple reveal">
             <div class="portfolio-item" style="aspect-ratio:4/3">
-                <img src="assets/residential-flake-1.webp" alt="Close-up of premium brindle flake epoxy floor showing mirror-like gloss finish" loading="lazy" width="1920" height="1440">
+                <img src="assets/garage-standard-flake.webp" alt="Residential garage with standard flake epoxy floor coating" loading="lazy" width="1440" height="754">
+                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>Garage Floor</h3><p>Standard Flake &mdash; COAT | Home</p></div></div>
+            </div>
+            <div class="portfolio-item" style="aspect-ratio:4/3">
+                <img src="assets/residential-flake-1.webp" alt="Close-up of premium brindle flake epoxy showing mirror-like gloss finish" loading="lazy" width="1920" height="1440">
                 <div class="portfolio-overlay"><div class="portfolio-caption"><h3>Brindle Flake Detail</h3><p>Full-Broadcast Flake &mdash; Residential</p></div></div>
             </div>
             <div class="portfolio-item" style="aspect-ratio:4/3">
-                <img src="assets/coat-shine.webp" alt="Polished concrete floor in modern luxury living room with wood accent wall" loading="lazy" width="1920" height="1280">
-                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>Modern Living</h3><p>Polished Concrete &mdash; COAT | Shine</p></div></div>
+                <img src="assets/indoor-outdoor-flake.webp" alt="Indoor-outdoor patio with flake epoxy floor and glass folding doors in custom home" loading="lazy" width="1537" height="2048">
+                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>Indoor / Outdoor</h3><p>Flake Epoxy &mdash; Custom Home</p></div></div>
             </div>
         </div>
 
