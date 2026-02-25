@@ -195,10 +195,7 @@
         .portfolio-caption{color:var(--white)}
         .portfolio-caption h3{font-family:'Playfair Display',serif;font-size:1.25rem;font-weight:400;margin-bottom:0.25rem}
         .portfolio-caption p{font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:rgba(255,255,255,0.7)}
-        .portfolio-row-2{display:grid;grid-template-columns:0.7fr 1.3fr;gap:1.5rem}
-
         /* BEFORE/AFTER */
-        .work{padding:0 4rem 10rem}
         .featured-project{position:relative;margin-bottom:6rem}
         .project-label{position:absolute;top:-2.5rem;left:0;font-size:0.65rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gray)}
         .ba-container{position:relative;width:100%;aspect-ratio:21/9;border-radius:4px;overflow:hidden;cursor:ew-resize;background:var(--gray-darker);user-select:none;-webkit-user-select:none}
@@ -463,7 +460,7 @@
     <!-- HERO -->
     <section class="hero" id="top">
         <div class="hero-bg"></div>
-        <div class="hero-image"><img src="assets/FullSizeRender.webp" alt="Premium metallic epoxy flooring by COAT" width="1920" height="1280" fetchpriority="high"></div>
+        <div class="hero-image"><img src="assets/coat-shine.webp" alt="Premium polished concrete flooring in modern living space" width="1920" height="1280" fetchpriority="high"></div>
         <span class="side-text left">Serving All of Texas</span>
         <span class="side-text right">Est. 2025</span>
         <div class="hero-content">
@@ -534,38 +531,24 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO -->
+    <!-- THE WORK -->
     <section class="portfolio" id="portfolio">
         <div class="section-header reveal">
             <div class="section-title-group"><span class="section-number">02</span><h2 class="section-title">The <em>Work</em></h2></div>
             <p class="section-subtitle">Every surface tells a story of craftsmanship and precision.</p>
         </div>
-        <div class="portfolio-grid reveal">
-            <div class="portfolio-item">
-                <img src="assets/FullSizeRender.webp" alt="Metallic epoxy floor with blue and gold swirl pattern in commercial space" loading="lazy" width="1920" height="1280">
-                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>New Heights</h3><p>Metallic Epoxy &mdash; College Station, TX</p></div></div>
-            </div>
-            <div class="portfolio-item tall">
-                <img src="assets/coat-shine.webp" alt="Polished concrete floor in modern luxury living room" loading="lazy" width="1920" height="1280">
-                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>Modern Living</h3><p>Polished Concrete &mdash; Residential</p></div></div>
-            </div>
-        </div>
-        <div class="portfolio-row-2 reveal">
-            <div class="portfolio-item">
-                <img src="assets/newheights-before.webp" alt="Commercial space before COAT epoxy flooring installation" loading="lazy" width="1920" height="1280">
-                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>Before</h3><p>Raw Concrete &mdash; New Heights</p></div></div>
-            </div>
-            <div class="portfolio-item">
-                <img src="assets/newheights-after.webp" alt="Commercial space after COAT metallic epoxy flooring installation" loading="lazy" width="1920" height="1280">
-                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>After</h3><p>Metallic Epoxy &mdash; New Heights</p></div></div>
-            </div>
-        </div>
-    </section>
 
-    <!-- BEFORE/AFTER SLIDER -->
-    <section class="work" id="work">
-        <div class="featured-project reveal">
-            <span class="project-label">Interactive Transformation</span>
+        <!-- Featured project photo -->
+        <div class="portfolio-grid reveal" style="grid-template-columns: 1fr;">
+            <div class="portfolio-item" style="aspect-ratio:21/9">
+                <img src="assets/FullSizeRender.webp" alt="Metallic epoxy floor with blue and gold swirl pattern in commercial space" loading="lazy" width="1920" height="1280">
+                <div class="portfolio-overlay"><div class="portfolio-caption"><h3>New Heights Church</h3><p>Metallic Epoxy &mdash; College Station, TX</p></div></div>
+            </div>
+        </div>
+
+        <!-- Before / After Slider — uses the remaining two photos -->
+        <div class="featured-project reveal" style="margin-top:4rem">
+            <span class="project-label">Before &amp; After</span>
             <div class="ba-container" id="baContainer">
                 <img src="assets/newheights-before.webp" alt="Before: bare concrete floor" class="ba-image before" loading="lazy" width="1920" height="1280">
                 <img src="assets/newheights-after.webp" alt="After: premium metallic epoxy floor" class="ba-image after" id="afterImage" loading="lazy" width="1920" height="1280">
@@ -587,7 +570,7 @@
                 <a href="quote.html" class="project-cta">Start Yours</a>
             </div>
         </div>
-    </section>
+    </section><!-- end .portfolio / The Work -->
 
     <!-- PROCESS -->
     <section class="process" id="process">
